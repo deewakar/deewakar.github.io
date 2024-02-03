@@ -1,0 +1,49 @@
+#+TITLE:Languages
+#+FILETAGS: languages:wiki
+* [[file:language_learning_roadmap.org][Language Learning Roadmap]]
+  1. Alphabets (also see relevant IPA sounds) and Numbers
+  2. Nouns, Pronouns and Articles (if any)
+  3. Simple composition (combining subject, verb and object) [Read and Listen extensively]
+  4. Adjectives
+  5. Prepositions
+  6. Simple sentences containing adjectives and prepositions [Read and Listen extensively]
+  7. Conjunctions and Disjunctions
+  8. Gender
+  9. Singular and plural
+  10. Grammatical person (first, second, third )
+  11. Adverbs
+  12. Grammatical Case  (accusative, nominative, dative etc.) [Read and Listen extensively]
+  13. Grammatical Tense
+  14. 1000 most used words and phrases.
+  15. 100 most used phrasal verbs.
+  16. 5000 most used words and phrases.
+
+* Reading and comprehension tips
+** Read children's books, textbooks for grades 1 to 5 (beginner).
+** Read comics and visual novels (beginner).
+** Read bilingual story books with parallel texts (beginner).
+** Use visual dictionaries (beginner and intermediate).
+** Read short stories and essays (intermediate).
+** Read something you have already read in a language you know (intermediate and advanced).
+
+* Listening tips
+** Study the subtitle file first before watching movies without subtitles.
+** Study the transcript of a podcast or a video before listening to them.
+** Listen to music with lyrics (Rap or Hip Hop music for added challenge).
+** Listen to audiobooks while reading the text.
+
+* Speaking tips
+** Talk to yourself
+** Try to mimic a native speaker's sentences, his/her accents, inflections etc.
+
+* Writing tips
+** Write in language specific forums and websites for quick feedback.
+** Make a penpal and write to them.
+** For a quick and rough feedback, use google translate or other tools to translate your writing to English.
+
+
+
+* [[file:nepali.org][Nepali]]
+* [[file:english.org][English]]
+* [[file:german.org][German]]
+* [[file:spanish.org][Spanish]]

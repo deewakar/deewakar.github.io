@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cascading Style Sheet &#8212; My Wiki 0.01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=9402ed52" />
+    <script src="_static/documentation_options.js?v=6ca3c713"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="English Learning" href="english.html" />
+    <link rel="prev" title="C Programming" href="c_lang.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="cascading-style-sheet">
+<h1>Cascading Style Sheet<a class="headerlink" href="#cascading-style-sheet" title="Link to this heading">¶</a></h1>
+<section id="online-resources-to-learn-css-beginner">
+<h2>Online resources to learn css (beginner)<a class="headerlink" href="#online-resources-to-learn-css-beginner" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/">https://developer.mozilla.org/en-US/docs/Learn/CSS/</a></p></li>
+<li><p><a class="reference external" href="https://htmldog.com/guides/">https://htmldog.com/guides/</a></p></li>
+<li><p><a class="reference external" href="https://web.dev/learn/css/">https://web.dev/learn/css/</a></p></li>
+<li><p><a class="reference external" href="http://learnlayout.com/">http://learnlayout.com/</a></p></li>
+<li><p><a class="reference external" href="https://adamschwartz.co/magic-of-css/">https://adamschwartz.co/magic-of-css/</a></p></li>
+<li><p><a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></p></li>
+<li><p><a class="reference external" href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a></p></li>
+<li><p><a class="reference external" href="https://cssbattle.dev/battle/">https://cssbattle.dev/battle/</a></p></li>
+<li><p><a class="reference external" href="https://cssgridgarden.com/">https://cssgridgarden.com/</a></p></li>
+<li><p><a class="reference external" href="https://cssgridgarden.com/">https://cssgridgarden.com/</a></p></li>
+</ul>
+</section>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">¶</a></h2>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">html</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">navy</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A css rule contains a selector followed by several css declarations
+inside curly braces, e.g. above ‘html’ is the selector</p></li>
+<li><p>Each lines inside the curly braces are called css declarations, they
+are of the form ‘property:value’</p></li>
+<li><p>Sometimes a function like calc() may be used instead of a literal
+value at the right-hand side of a css declaration</p></li>
+<li><p>Another structure used in css is the css at-rule structure that
+provides instruction for what css should do or how to behave</p></li>
+<li><p>&#64;media is used for media queries, &#64;import is used to import a
+stylesheet into another stylesheet etc.</p></li>
+<li><p>CSS properties comes in two forms: long form and shorthands</p></li>
+<li><p>Shorthands set several properties in a single line, some examples of
+shorthand properties are: font,background,padding,margin,border</p></li>
+</ul>
+</section>
+<section id="cascade-and-inheritance">
+<h2>Cascade and Inheritance<a class="headerlink" href="#cascade-and-inheritance" title="Link to this heading">¶</a></h2>
+<section id="cascade-in-case-of-conflicting-selection-the-css-rule-that-appears-later-will-be-applied-hence-order-of-the-css-rules-matter">
+<h3>Cascade : in case of conflicting selection, the css rule that appears later will be applied, hence order of the css rules matter<a class="headerlink" href="#cascade-in-case-of-conflicting-selection-the-css-rule-that-appears-later-will-be-applied-hence-order-of-the-css-rules-matter" title="Link to this heading">¶</a></h3>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* this rule will be applied */</span>
+<span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="when-more-rule-can-style-an-element-then-cascade-determines-which-rule-will-be-applied">
+<h4>When more rule can style an element, then cascade determines which rule will be applied<a class="headerlink" href="#when-more-rule-can-style-an-element-then-cascade-determines-which-rule-will-be-applied" title="Link to this heading">¶</a></h4>
+</section>
+<section id="it-depends-on-following-three-factors-listed-here-in-incresing-order-of-priority-later-ones-overrule-earlier-ones-source-order-specificity-importance">
+<h4>It depends on following three factors listed here in incresing order of priority (later ones overrule earlier ones): source order, specificity, importance<a class="headerlink" href="#it-depends-on-following-three-factors-listed-here-in-incresing-order-of-priority-later-ones-overrule-earlier-ones-source-order-specificity-importance" title="Link to this heading">¶</a></h4>
+</section>
+<section id="source-order-means-the-order-of-the-conflicting-css-rules-in-the-css-file-s-the-later-ones-overrule-earlier-rules">
+<h4>source order : means the order of the conflicting css rules in the css file(s), the later ones overrule earlier rules.<a class="headerlink" href="#source-order-means-the-order-of-the-conflicting-css-rules-in-the-css-file-s-the-later-ones-overrule-earlier-rules" title="Link to this heading">¶</a></h4>
+</section>
+<section id="specificity-some-selectors-are-considered-more-specific-than-others-e-g-id-selector-is-more-specific-than-class-selector-which-is-more-specific-than-element-selector">
+<h4>Specificity : Some selectors are considered more specific than others e.g. id selector is more specific than class selector which is more specific than element selector<a class="headerlink" href="#specificity-some-selectors-are-considered-more-specific-than-others-e-g-id-selector-is-more-specific-than-class-selector-which-is-more-specific-than-element-selector" title="Link to this heading">¶</a></h4>
+</section>
+<section id="styles-with-higher-specificity-overides-the-ones-with-lower-specificity">
+<h4>Styles with higher specificity overides the ones with lower specificity<a class="headerlink" href="#styles-with-higher-specificity-overides-the-ones-with-lower-specificity" title="Link to this heading">¶</a></h4>
+</section>
+<section id="only-the-conflicting-css-declarations-are-replaced-rather-than-entire-rulesets">
+<h4>Only the conflicting css declarations are replaced rather than entire rulesets.<a class="headerlink" href="#only-the-conflicting-css-declarations-are-replaced-rather-than-entire-rulesets" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-browser-gives-certain-scores-to-different-selectors-by-adding-which-the-total-specificity-score-is-calculated">
+<h4>The browser gives certain scores to different selectors by adding which the total specificity score is calculated.<a class="headerlink" href="#the-browser-gives-certain-scores-to-different-selectors-by-adding-which-the-total-specificity-score-is-calculated" title="Link to this heading">¶</a></h4>
+</section>
+<section id="specificity-of-a-selector-is-measued-using-four-different-values-four-single-digit-columns-thousands-hundrends-tens-and-ones">
+<h4>Specificity of a selector is measued using four different values (four single digit columns): Thousands, Hundrends, Tens and Ones<a class="headerlink" href="#specificity-of-a-selector-is-measued-using-four-different-values-four-single-digit-columns-thousands-hundrends-tens-and-ones" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-inline-styles-give-1-to-the-thousands-id-selector-scores-1-in-hundereds-column-class-pseudo-class-and-attribute-score-in-tens-column-and-element-pseudo-elements-score-in-ones-column">
+<h4>The inline styles give 1 to the Thousands, id selector scores 1 in hundereds column, class, pseudo-class and attribute score in Tens column, and element,pseudo-elements score in ones column<a class="headerlink" href="#the-inline-styles-give-1-to-the-thousands-id-selector-scores-1-in-hundereds-column-class-pseudo-class-and-attribute-score-in-tens-column-and-element-pseudo-elements-score-in-ones-column" title="Link to this heading">¶</a></h4>
+</section>
+<section id="e-g-the-selector-h1-p-first-letter-has-total-specificity-score-of-3">
+<h4>e.g. the selector ‘h1 + p::first-letter’ has total specificity score of 3<a class="headerlink" href="#e-g-the-selector-h1-p-first-letter-has-total-specificity-score-of-3" title="Link to this heading">¶</a></h4>
+</section>
+<section id="importance-we-can-use-a-special-keyword-important-to-overrule-all-calculations-about-cascade-and-specificity-never-use-this-actually">
+<h4>Importance: We can use a special keyword ‘!important’ to overrule all calculations about cascade and specificity (NEVER USE THIS ACTUALLY!!)<a class="headerlink" href="#importance-we-can-use-a-special-keyword-important-to-overrule-all-calculations-about-cascade-and-specificity-never-use-this-actually" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="inheritance-some-css-properties-set-on-parent-elements-are-inherited-by-child-elements-for-e-g-color-font-family-and-some-aren-t-for-e-g-width">
+<h3>Inheritance: Some CSS properties set on parent elements are inherited by child elements for e.g. color, font-family and some aren’t for e.g. width.<a class="headerlink" href="#inheritance-some-css-properties-set-on-parent-elements-are-inherited-by-child-elements-for-e-g-color-font-family-and-some-aren-t-for-e-g-width" title="Link to this heading">¶</a></h3>
+<section id="css-provides-five-special-universal-values-to-control-inheritance-inherit-initial-revert-revert-layer-and-unset">
+<h4>CSS provides five special universal values to control inheritance: inherit, initial, revert, revert-layer and unset<a class="headerlink" href="#css-provides-five-special-universal-values-to-control-inheritance-inherit-initial-revert-revert-layer-and-unset" title="Link to this heading">¶</a></h4>
+</section>
+<section id="a-shorthand-property-all-can-be-used-to-set-these-inheritance-values-for-all-properties-of-an-element-at-once">
+<h4>A shorthand property ‘all’ can be used to set these inheritance values for all properties of an element at once<a class="headerlink" href="#a-shorthand-property-all-can-be-used-to-set-these-inheritance-values-for-all-properties-of-an-element-at-once" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="css-selection">
+<h2>CSS Selection<a class="headerlink" href="#css-selection" title="Link to this heading">¶</a></h2>
+<section id="basic-css-selectors">
+<h3>Basic CSS Selectors<a class="headerlink" href="#basic-css-selectors" title="Link to this heading">¶</a></h3>
+<section id="the-simplest-of-selectors-are-the-type-selectors-that-uses-html-element-names-themselves-html-body-p-div-a-etc">
+<h4>The simplest of selectors are the type selectors that uses html element names themselves: html,body,p,div,a etc.,<a class="headerlink" href="#the-simplest-of-selectors-are-the-type-selectors-that-uses-html-element-names-themselves-html-body-p-div-a-etc" title="Link to this heading">¶</a></h4>
+</section>
+<section id="class-selectors-have-at-the-start-followed-by-the-class-name-id-selectors-have-at-the-start-followed-by-the-id-name">
+<h4>Class selectors have ‘.’ at the start followed by the class name, id selectors have ‘#’ at the start followed by the id name<a class="headerlink" href="#class-selectors-have-at-the-start-followed-by-the-class-name-id-selectors-have-at-the-start-followed-by-the-id-name" title="Link to this heading">¶</a></h4>
+</section>
+<section id="we-can-target-multiple-selectors-by-using-a-comma-between-them">
+<h4>We can target multiple selectors by using a comma between them<a class="headerlink" href="#we-can-target-multiple-selectors-by-using-a-comma-between-them" title="Link to this heading">¶</a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="o">,</span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="element-tag-selector-immediately-followed-by-a-class-selector-selects-all-the-elements-with-the-specified-class-only">
+<h4>Element tag selector immediately followed by a class selector selects all the elements with the specified class only.<a class="headerlink" href="#element-tag-selector-immediately-followed-by-a-class-selector-selects-all-the-elements-with-the-specified-class-only" title="Link to this heading">¶</a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">.</span><span class="nc">special</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">purple</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-universal-selector-will-match-elements-of-any-type-in-the-document-or-inside-parent-element-when-chained-with-another-selector-with-a-descendant-combinator">
+<h4>The universal selector ‘*’ will match elements of any type in the document or inside parent element when chained with another selector with a descendant combinator.<a class="headerlink" href="#the-universal-selector-will-match-elements-of-any-type-in-the-document-or-inside-parent-element-when-chained-with-another-selector-with-a-descendant-combinator" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="css-combinators">
+<h3>CSS Combinators<a class="headerlink" href="#css-combinators" title="Link to this heading">¶</a></h3>
+<section id="to-select-nested-element-inside-another-element-i-e-descendant-element-we-use-a-selector-called-descendant-combinator-that-uses-space-to-separate-the-enclosing-selector-and-the-enclosed-selector">
+<h4>To select nested element inside another element (i.e. descendant element), we use a selector called descendant combinator that uses space to separate the enclosing selector and the enclosed selector<a class="headerlink" href="#to-select-nested-element-inside-another-element-i-e-descendant-element-we-use-a-selector-called-descendant-combinator-that-uses-space-to-separate-the-enclosing-selector-and-the-enclosed-selector" title="Link to this heading">¶</a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* only select &lt;em&gt; elements enclosed inside &lt;li&gt; elements */</span>
+<span class="nt">li</span><span class="w"> </span><span class="nt">em</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="we-use-adjacent-sibling-combinator-to-select-element-that-is-immediately-after-the-specified-element-on-the-same-hierarchy-level">
+<h4>We use adjacent sibling combinator ‘+’ to select element that is immediately after the specified element on the same hierarchy level<a class="headerlink" href="#we-use-adjacent-sibling-combinator-to-select-element-that-is-immediately-after-the-specified-element-on-the-same-hierarchy-level" title="Link to this heading">¶</a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-general-sibling-selector-selects-all-the-siblings-of-the-specified-element">
+<h4>The general sibling selector (~) selects all the siblings of the specified element<a class="headerlink" href="#the-general-sibling-selector-selects-all-the-siblings-of-the-specified-element" title="Link to this heading">¶</a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-child-selector-selects-all-the-children-immediate-descendants-of-the-specified-element">
+<h4>The child selector (&gt;) selects all the children (immediate descendants) of the specified element<a class="headerlink" href="#the-child-selector-selects-all-the-children-immediate-descendants-of-the-specified-element" title="Link to this heading">¶</a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* all child &lt;p&gt; elements of a div will be selected */</span>
+<span class="nt">div</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="attribute-selectors">
+<h3>Attribute Selectors<a class="headerlink" href="#attribute-selectors" title="Link to this heading">¶</a></h3>
+<section id="attribute-selectors-enable-us-to-select-elements-based-on-the-presence-of-an-attribute-alone-or-along-with-its-value">
+<h4>Attribute selectors enable us to select elements based on the presence of an attribute alone or along with its value.<a class="headerlink" href="#attribute-selectors-enable-us-to-select-elements-based-on-the-presence-of-an-attribute-alone-or-along-with-its-value" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-e-g-a-title-selects-all-a-elements-with-an-attribute-named-title">
+<h4>syntax: [attr], e.g. a[title] selects all &lt;a&gt; elements with an attribute named ‘title’<a class="headerlink" href="#syntax-attr-e-g-a-title-selects-all-a-elements-with-an-attribute-named-title" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-value-e-g-a-href-http-example-com-selects-all-a-elements-with-href-attribute-having-value-the-string-http-example-com">
+<h4>syntax: [attr=value], e.g. a[href=”<a class="reference external" href="http://example.com">http://example.com</a>”] selects all &lt;a&gt; elements with href attribute having value the string “<a class="reference external" href="http://example.com">http://example.com</a>”<a class="headerlink" href="#syntax-attr-value-e-g-a-href-http-example-com-selects-all-a-elements-with-href-attribute-having-value-the-string-http-example-com" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-value-e-g-p-class-special-matches-p-elements-with-class-attribute-exactly-the-string-special-or-if-the-classlist-contains-special">
+<h4>syntax: [attr~=value], e.g. p[class~=”special”] matches &lt;p&gt; elements with class attribute exactly the string “special” or if the classlist contains ‘special’<a class="headerlink" href="#syntax-attr-value-e-g-p-class-special-matches-p-elements-with-class-attribute-exactly-the-string-special-or-if-the-classlist-contains-special" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-value-e-g-div-lang-zh-matches-div-elements-with-lang-attribute-exactly-the-string-zh-or-starts-with-zh-and-a-hyphen">
+<h4>syntax: [attr|=value], e.g. div[lang=”zh”] matches &lt;div&gt; elements with lang attribute exactly the string “zh” or starts with “zh” and a hyphen (-)<a class="headerlink" href="#syntax-attr-value-e-g-div-lang-zh-matches-div-elements-with-lang-attribute-exactly-the-string-zh-or-starts-with-zh-and-a-hyphen" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-beginning-with-box">
+<h4>syntax: [attr^=value], e.g. li[class^=”box-”] matches &lt;li&gt; elements with classlist beginning with “box-”<a class="headerlink" href="#syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-beginning-with-box" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-ending-in-box">
+<h4>syntax: [attr$=value], e.g. li[class$=”-box”] matches &lt;li&gt; elements with classlist ending in “-box”<a class="headerlink" href="#syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-ending-in-box" title="Link to this heading">¶</a></h4>
+</section>
+<section id="syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-containing-the-sting-box">
+<h4>syntax: [attr*=value], e.g. li[class*=”box”] matches &lt;li&gt; elements with classlist containing the sting “box”<a class="headerlink" href="#syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-containing-the-sting-box" title="Link to this heading">¶</a></h4>
+</section>
+<section id="to-ignore-the-case-sensitivity-of-the-attributes-matches-we-can-put-the-value-i-before-the-closing-bracket-e-g-li-class-button-i">
+<h4>to ignore the case sensitivity of the attributes matches we can put the value i before the closing bracket e.g. li[class^=”button-” i]<a class="headerlink" href="#to-ignore-the-case-sensitivity-of-the-attributes-matches-we-can-put-the-value-i-before-the-closing-bracket-e-g-li-class-button-i" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="pseudo-classes-and-pseudo-elements">
+<h3>Pseudo Classes and Pseudo Elements<a class="headerlink" href="#pseudo-classes-and-pseudo-elements" title="Link to this heading">¶</a></h3>
+<section id="pseudo-classes-are-used-to-style-certain-states-of-an-element-for-example-hover-pseudo-class-is-used-to-select-an-element-only-when-it-is-hovered-over-by-the-mouse-pointer">
+<h4>Pseudo classes are used to style certain states of an element, for example, :hover pseudo class is used to select an element only when it is hovered over by the mouse pointer<a class="headerlink" href="#pseudo-classes-are-used-to-style-certain-states-of-an-element-for-example-hover-pseudo-class-is-used-to-select-an-element-only-when-it-is-hovered-over-by-the-mouse-pointer" title="Link to this heading">¶</a></h4>
+</section>
+<section id="a-hover-select-the-anchor-element-over-which-the-mouse-pointer-is-being-hovered">
+<h4>a:hover { } -&gt; select the anchor element over which the mouse pointer is being hovered<a class="headerlink" href="#a-hover-select-the-anchor-element-over-which-the-mouse-pointer-is-being-hovered" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-not-pseudo-class-is-used-to-select-all-that-don-t-match-the-given-selector-e-g-not-p-matches-everything-except-paragraphs">
+<h4>The :not() pseudo-class is used to select all that don’t match the given selector e.g. :not(p) matches everything except paragraphs.<a class="headerlink" href="#the-not-pseudo-class-is-used-to-select-all-that-don-t-match-the-given-selector-e-g-not-p-matches-everything-except-paragraphs" title="Link to this heading">¶</a></h4>
+</section>
+<section id="pseudo-elements-are-used-to-style-a-part-of-an-element-rather-than-the-whole-element-e-g-p-first-line-selects-only-the-first-lines-of-all-paragraph-elements">
+<h4>Pseudo elements are used to style a part of an element rather than the whole element. e.g. p::first-line selects only the first lines of all paragraph elements<a class="headerlink" href="#pseudo-elements-are-used-to-style-a-part-of-an-element-rather-than-the-whole-element-e-g-p-first-line-selects-only-the-first-lines-of-all-paragraph-elements" title="Link to this heading">¶</a></h4>
+</section>
+<section id="from-lower-to-higher-specificity-type-selectors-and-pseudo-elements-class-selctors-and-pseudo-classes-id-selectors">
+<h4>From lower to higher specificity: Type selectors and pseudo-elements, Class selctors and pseudo-classes, id selectors<a class="headerlink" href="#from-lower-to-higher-specificity-type-selectors-and-pseudo-elements-class-selctors-and-pseudo-classes-id-selectors" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="the-box-model">
+<h2>The box model<a class="headerlink" href="#the-box-model" title="Link to this heading">¶</a></h2>
+<section id="there-are-two-types-of-boxes-inline-boxes-and-block-boxes">
+<h3>There are two types of boxes: inline boxes and block boxes<a class="headerlink" href="#there-are-two-types-of-boxes-inline-boxes-and-block-boxes" title="Link to this heading">¶</a></h3>
+</section>
+<section id="the-type-of-box-applied-to-an-element-is-defined-by-display-property">
+<h3>The type of box applied to an element is defined by ‘display’ property<a class="headerlink" href="#the-type-of-box-applied-to-an-element-is-defined-by-display-property" title="Link to this heading">¶</a></h3>
+</section>
+<section id="css-boxes-has-two-display-types-outer-and-inner-display-types">
+<h3>CSS boxes has two display types: outer and inner display types<a class="headerlink" href="#css-boxes-has-two-display-types-outer-and-inner-display-types" title="Link to this heading">¶</a></h3>
+<section id="outer-display-type-details-whether-the-box-is-block-or-inline">
+<h4>Outer display type details whether the box is block or inline<a class="headerlink" href="#outer-display-type-details-whether-the-box-is-block-or-inline" title="Link to this heading">¶</a></h4>
+</section>
+<section id="inner-display-type-which-dictates-how-elements-inside-the-box-are-laid-out">
+<h4>Inner display type which dictates how elements inside the box are laid out<a class="headerlink" href="#inner-display-type-which-dictates-how-elements-inside-the-box-are-laid-out" title="Link to this heading">¶</a></h4>
+</section>
+<section id="by-default-the-elements-inside-a-box-are-laid-out-in-normal-flow-i-e-like-any-other-block-or-inline-elements">
+<h4>By default, the elements inside a box are laid out in normal flow i.e. like any other block or inline elements<a class="headerlink" href="#by-default-the-elements-inside-a-box-are-laid-out-in-normal-flow-i-e-like-any-other-block-or-inline-elements" title="Link to this heading">¶</a></h4>
+</section>
+<section id="we-can-change-the-inner-display-type-by-using-display-flex-which-makes-the-outer-display-type-block-but-inner-display-type-is-changed-to-flex">
+<h4>We can change the inner display type by using display: flex, which makes the outer display type block but inner display type is changed to flex.<a class="headerlink" href="#we-can-change-the-inner-display-type-by-using-display-flex-which-makes-the-outer-display-type-block-but-inner-display-type-is-changed-to-flex" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="the-display-property-values-such-as-block-and-inline-relates-to-the-outer-value-of-display">
+<h3>The display property values such as ‘block’ and ‘inline’ relates to the outer value of display.<a class="headerlink" href="#the-display-property-values-such-as-block-and-inline-relates-to-the-outer-value-of-display" title="Link to this heading">¶</a></h3>
+</section>
+<section id="block-boxes">
+<h3>Block boxes<a class="headerlink" href="#block-boxes" title="Link to this heading">¶</a></h3>
+<section id="it-has-outer-display-type-of-block">
+<h4>It has outer display type of ‘block’<a class="headerlink" href="#it-has-outer-display-type-of-block" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-box-will-break-onto-a-new-line-and-will-extend-in-inline-direction-to-fill-the-space-available-in-its-container-becomes-as-wided-as-its-container">
+<h4>The box will break onto a new line and will extend in inline direction to fill the space available in its container (becomes as wided as its container)<a class="headerlink" href="#the-box-will-break-onto-a-new-line-and-will-extend-in-inline-direction-to-fill-the-space-available-in-its-container-becomes-as-wided-as-its-container" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-width-and-height-properties-are-respected">
+<h4>The ‘width’ and ‘height’ properties are respected.<a class="headerlink" href="#the-width-and-height-properties-are-respected" title="Link to this heading">¶</a></h4>
+</section>
+<section id="padding-margin-and-border-will-cause-other-elements-to-be-pushed-away-from-the-box">
+<h4>Padding, margin and border will cause other elements to be pushed away from the box.<a class="headerlink" href="#padding-margin-and-border-will-cause-other-elements-to-be-pushed-away-from-the-box" title="Link to this heading">¶</a></h4>
+</section>
+<section id="some-html-elements-like-h1-and-p-use-block-as-their-default-outer-display-type">
+<h4>Some html elements like &lt;h1&gt; and &lt;p&gt; use ‘block’ as their default outer display type.<a class="headerlink" href="#some-html-elements-like-h1-and-p-use-block-as-their-default-outer-display-type" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="inline-boxes">
+<h3>Inline boxes<a class="headerlink" href="#inline-boxes" title="Link to this heading">¶</a></h3>
+<section id="the-box-has-outer-display-type-of-inline">
+<h4>The box has outer display type of ‘inline’.<a class="headerlink" href="#the-box-has-outer-display-type-of-inline" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-box-will-not-break-onto-a-new-line">
+<h4>The box will not break onto a new line.<a class="headerlink" href="#the-box-will-not-break-onto-a-new-line" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-width-and-height-properties-will-not-apply">
+<h4>The ‘width’ and ‘height’ properties will not apply.<a class="headerlink" href="#the-width-and-height-properties-will-not-apply" title="Link to this heading">¶</a></h4>
+</section>
+<section id="vertical-padding-margins-and-borders-will-apply-but-will-not-affect-other-inline-boxes-to-move-away-i-e-may-overlap-other-elements">
+<h4>Vertical padding, margins and borders will apply but will not affect other inline boxes to move away i.e. may overlap other elements.<a class="headerlink" href="#vertical-padding-margins-and-borders-will-apply-but-will-not-affect-other-inline-boxes-to-move-away-i-e-may-overlap-other-elements" title="Link to this heading">¶</a></h4>
+</section>
+<section id="horizontal-padding-margins-and-borders-will-apply-and-will-cause-other-inline-boxes-to-move-away">
+<h4>Horizontal padding, margins and borders will apply and will cause other inline boxes to move away.<a class="headerlink" href="#horizontal-padding-margins-and-borders-will-apply-and-will-cause-other-inline-boxes-to-move-away" title="Link to this heading">¶</a></h4>
+</section>
+<section id="some-html-elements-like-a-span-em-and-strong-use-inline-as-their-outer-display-type-by-default">
+<h4>Some html elements like &lt;a&gt;, &lt;span&gt;, &lt;em&gt; and &lt;strong&gt; use ‘inline’ as their outer display type by default.<a class="headerlink" href="#some-html-elements-like-a-span-em-and-strong-use-inline-as-their-outer-display-type-by-default" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="special-display-value-inline-block">
+<h3>Special display value: inline-block<a class="headerlink" href="#special-display-value-inline-block" title="Link to this heading">¶</a></h3>
+<section id="it-provides-a-middle-ground-between-inline-and-block">
+<h4>It provides a middle ground between inline and block.<a class="headerlink" href="#it-provides-a-middle-ground-between-inline-and-block" title="Link to this heading">¶</a></h4>
+</section>
+<section id="useful-in-situations-where-you-do-not-want-an-item-to-break-onto-a-new-line-but-do-want-it-to-respect-width-and-height-and-avoid-overlapping">
+<h4>Useful in situations where you do not want an item to break onto a new line but do want it to respect width and height and avoid overlapping.<a class="headerlink" href="#useful-in-situations-where-you-do-not-want-an-item-to-break-onto-a-new-line-but-do-want-it-to-respect-width-and-height-and-avoid-overlapping" title="Link to this heading">¶</a></h4>
+</section>
+<section id="padding-margin-and-border-will-cause-other-elements-to-be-pushed-away">
+<h4>Padding, margin and border will cause other elements to be pushed away.<a class="headerlink" href="#padding-margin-and-border-will-cause-other-elements-to-be-pushed-away" title="Link to this heading">¶</a></h4>
+</section>
+<section id="it-will-only-become-larger-than-its-content-if-you-explicitly-add-width-and-height-properties">
+<h4>It will only become larger than its content if you explicitly add width and height properties.<a class="headerlink" href="#it-will-only-become-larger-than-its-content-if-you-explicitly-add-width-and-height-properties" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="the-css-box-model-as-a-whole-applies-to-block-boxes-and-inline-boxes-use-just-some-of-the-behavior-defined-in-the-box-model">
+<h3>The CSS box model as a whole applies to block boxes and inline boxes use just some of the behavior defined in the box model.<a class="headerlink" href="#the-css-box-model-as-a-whole-applies-to-block-boxes-and-inline-boxes-use-just-some-of-the-behavior-defined-in-the-box-model" title="Link to this heading">¶</a></h3>
+</section>
+<section id="the-parts-of-a-css-block-box-content-box-padding-box-border-box-and-margin-box">
+<h3>The parts of a css block box: content box, padding box, border box and margin box<a class="headerlink" href="#the-parts-of-a-css-block-box-content-box-padding-box-border-box-and-margin-box" title="Link to this heading">¶</a></h3>
+<img alt="_images/css-box-model.png" src="_images/css-box-model.png" />
+</section>
+<section id="margin-and-padding">
+<h3>Margin and padding<a class="headerlink" href="#margin-and-padding" title="Link to this heading">¶</a></h3>
+<section id="margin-is-the-space-outside-the-border-of-an-element-set-with-the-shorthand-margin-property-or-individual-margin-top-margin-right-margin-bottom-and-margin-left">
+<h4>Margin is the space outside the border of an element set with the shorthand margin property or individual margin-top, margin-right, margin-bottom and margin-left.<a class="headerlink" href="#margin-is-the-space-outside-the-border-of-an-element-set-with-the-shorthand-margin-property-or-individual-margin-top-margin-right-margin-bottom-and-margin-left" title="Link to this heading">¶</a></h4>
+</section>
+<section id="we-can-set-all-four-margins-to-a-single-value-with-margin-property-by-giving-it-a-single-value-e-g-margin-45px">
+<h4>We can set all four margins to a single value with margin property by giving it a single value e.g. margin: 45px<a class="headerlink" href="#we-can-set-all-four-margins-to-a-single-value-with-margin-property-by-giving-it-a-single-value-e-g-margin-45px" title="Link to this heading">¶</a></h4>
+</section>
+<section id="we-can-also-set-all-four-margins-to-different-values-with-clockwise-notation">
+<h4>We can also set all four margins to different values with clockwise notation<a class="headerlink" href="#we-can-also-set-all-four-margins-to-different-values-with-clockwise-notation" title="Link to this heading">¶</a></h4>
+</section>
+<section id="e-g-margin-20-22-30-24-sets-margin-top-to-20-margin-right-to-22-margin-bottom-to-30-and-margin-left-to-24">
+<h4>e.g. margin: 20 22 30 24 sets margin-top to 20, margin-right to 22, margin-bottom to 30 and margin-left to 24<a class="headerlink" href="#e-g-margin-20-22-30-24-sets-margin-top-to-20-margin-right-to-22-margin-bottom-to-30-and-margin-left-to-24" title="Link to this heading">¶</a></h4>
+</section>
+<section id="the-margin-property-can-be-set-to-negative-values-as-well">
+<h4>The margin property can be set to negative values as well.<a class="headerlink" href="#the-margin-property-can-be-set-to-negative-values-as-well" title="Link to this heading">¶</a></h4>
+</section>
+<section id="padding-is-the-space-between-the-border-and-the-element-itself">
+<h4>Padding is the space between the border and the element itself.<a class="headerlink" href="#padding-is-the-space-between-the-border-and-the-element-itself" title="Link to this heading">¶</a></h4>
+</section>
+<section id="similar-to-margin-property-the-padding-property-can-have-single-or-multiple-values-to-set-the-padding">
+<h4>Similar to margin property, the padding property can have single or multiple values to set the padding.<a class="headerlink" href="#similar-to-margin-property-the-padding-property-can-have-single-or-multiple-values-to-set-the-padding" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+<section id="borders">
+<h3>Borders<a class="headerlink" href="#borders" title="Link to this heading">¶</a></h3>
+<section id="some-properties-related-to-the-border-of-an-element-are-border-width-border-style-border-color">
+<h4>Some properties related to the border of an element are: border-width, border-style, border-color.<a class="headerlink" href="#some-properties-related-to-the-border-of-an-element-are-border-width-border-style-border-color" title="Link to this heading">¶</a></h4>
+</section>
+<section id="we-can-make-rounded-borders-with-border-radius-property-higher-value-means-more-rounded-border">
+<h4>We can make rounded borders with border-radius property; Higher value means more rounded border.<a class="headerlink" href="#we-can-make-rounded-borders-with-border-radius-property-higher-value-means-more-rounded-border" title="Link to this heading">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="general-units-used-in-css">
+<h2>General units used in CSS<a class="headerlink" href="#general-units-used-in-css" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Units like px (pixels), in (inches), mm (millimeters),
+cm(centimeters) pt (points 1pt = 1/72 of inch), pc (pica 1pc= 12pt)
+are absolute units of measurement.</p></li>
+<li><p>em (for font size, comes from the world of typography) is a relative
+unit for fonts. 1 em is the height of the font of current element,
+2em is twice the size of the font of current element.</p></li>
+<li><p>rem is a unit that is measured relative to the font size of the root
+element, which is constant for the whole document.</p></li>
+<li><p>vh and vw: are relative to 1% of viewport height and width
+respectively</p></li>
+<li><p>%: percentage relative to the parent element.</p></li>
+<li><p>See <a class="reference external" href="https://drafts.csswg.org/css-values-3/#absolute-lengths">https://drafts.csswg.org/css-values-3/#absolute-lengths</a></p></li>
+</ul>
+</section>
+<section id="colors">
+<h2>Colors<a class="headerlink" href="#colors" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Colors can be specified in several ways:</p></li>
+<li><p>As predefined color names like “red”, “maroon”, “fuchsia”, “teal”,
+“orange”, etc.</p></li>
+<li><p>rgb values between 0 and 255 e.g. rgb(0, 255, 0) for green</p></li>
+<li><p>pecentages like rgb(0%, 100%, 0%).</p></li>
+<li><p>rgba i.e. rgb values with alpha value for transparency in addition.</p></li>
+<li><p>The alpha value varies between 0 to 1.</p></li>
+<li><p>Similarly we can use hsl and hsla color.</p></li>
+<li><p>hexadecimal color codes like #00ff00 or shortcut #0f0.</p></li>
+<li><p>There are two properties related to color: color and
+background-color.</p></li>
+</ul>
+</section>
+<section id="fonts">
+<h2>Fonts<a class="headerlink" href="#fonts" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>fonts can be specified with the font shorthand property.</p></li>
+<li><p>font(font-style, font-variant, font-weight, font-size/line-height,
+font-family)</p></li>
+<li><p>Each of the above font properties can be set individually.</p></li>
+<li><p>font-family can have generic font family names like ‘serif’,
+‘monospace’ etc.</p></li>
+<li><p>It can also have font family names like ‘times’, ‘courier’, ‘ariel’
+etc.</p></li>
+<li><p>We can set multiple font-family types as fallback.</p></li>
+<li><p>font-size property sets font size with predefined values like
+‘medium’, ‘large’, ‘small’, ‘xlarge’ etc.</p></li>
+<li><p>font-size can also be set with exact length in cm,px,inch etc or
+percentage.</p></li>
+<li><p>The ‘inherit’ value of font-size is used to inherit the fontsize of
+the parent element.</p></li>
+<li><p>To use a third-party fonts like google fonts, we have to include the
+css file of the font in a &lt;link&gt; and use the font just as if it is an
+installed font using the font-family property.</p></li>
+</ul>
+</section>
+<section id="background-styling">
+<h2>Background styling<a class="headerlink" href="#background-styling" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>We can set a background color with background-color property</p></li>
+<li><p>We can set an image as the background image with background-image
+property.</p></li>
+<li><p>We can use HTTP URLs with background-image property</p></li>
+<li><p>We can use CSS functions like lineargradient(), radial-gradient()
+etc. with the background-image property.</p></li>
+<li><p>We can specify whether to repeat a background-image with
+background-repeat property.</p></li>
+<li><p>The background-attachment property specify whether the background
+moves when we scroll.</p></li>
+</ul>
+</section>
+<section id="css-variables">
+<h2>CSS variables<a class="headerlink" href="#css-variables" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>We can declare a css variable (usually inside the body element or the
+:root element) and use it in several places.</p></li>
+<li><p>We can declare a css variable as –variable-name: value e.g.
+–main-color: #2ae;</p></li>
+<li><p>To use the above variable we do var(variable, backup-value) e.g.
+background-color: var(–main-color)</p></li>
+<li><p>We can specify a backup value to the variable as the second argument
+to var e.g. background-color: var(–main-color, brown);</p></li>
+<li><p>We can override a css variable declared in :root or body by
+redeclaring that variable in another element.</p></li>
+</ul>
+</section>
+<section id="css-media-queries">
+<h2>CSS media queries<a class="headerlink" href="#css-media-queries" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The &#64;media queries allows us to use different styles for different
+types of screen.</p></li>
+<li><p>We can check for a viewport’s height or width, device’s orientation
+etc. using media queries and set different css rules accordingly.</p></li>
+<li><p>&#64;media queries either resolve to true or false.</p></li>
+<li><p>The syntax of a &#64;media query is: &#64;media not|only mediatype and
+(expressions) { css-properties}</p></li>
+<li><p>The expression above is a single mediafeature or multiple
+mediafeatures connected with and,or,not.</p></li>
+<li><p>mediatype is one of screen,print, speech or all(default).</p></li>
+</ul>
+</section>
+<section id="css-position">
+<h2>CSS position<a class="headerlink" href="#css-position" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The position property determines how element is positioned.</p></li>
+<li><p>position is one of static (default), fixed, absolute, relative and
+initial.</p></li>
+<li><p>The top,right,bottom,left properties determine the final location of
+positioned elements.</p></li>
+<li><p>static (the default) position renders the element according to the
+normal flow of the document.</p></li>
+<li><p>In static, top, left, right, bottom and z-index has no effect.</p></li>
+<li><p>In relative, the element is positioned according to the normal flow
+of the document and then offset relative to itself based on the
+values of top,left,right,bottom and z-index.</p></li>
+<li><p>If the value of z-index is anything other than auto in relative
+position then it creates a new stacking context.</p></li>
+<li><p>In absolute position, the element is removed from the normal flow of
+the document and no space is created for the element.</p></li>
+<li><p>In absolute, the element is positioned relative to its nearest
+ancestor that isn’t positioned as static if any, otherwise it is
+positioned relative to the initial containing block.</p></li>
+<li><p>In absolute, top,right,bottom,left,z-index determine the final
+position of the element and the margins do not collapse with other
+margins.</p></li>
+<li><p>The fixed position is just like absolute except it is positioned
+relative to the initial containing block established by the viewport.</p></li>
+<li><p>In fixed position, left,top,right and bottom determine the final
+position.</p></li>
+<li><p>The fixed position always creates a new stacking context.</p></li>
+<li><p>The sticky position is a mix of relative and fixed. Rendered with the
+normal flow of the document but offset relative to the nearest
+scrolling ancestor and containing block.</p></li>
+<li><p>An element positioned with sticky behaves like a relative positioned
+element until the page is scrolled then it behaves like a fixed
+positioned element.</p></li>
+</ul>
+</section>
+<section id="css-grid">
+<h2>CSS grid<a class="headerlink" href="#css-grid" title="Link to this heading">¶</a></h2>
+</section>
+<section id="css-flexbox">
+<h2>CSS flexbox<a class="headerlink" href="#css-flexbox" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Flexbox layout model is used to display items in one dimension: as a
+row or a column.</p></li>
+<li><p>We use ‘display: flex’ property in the containing element to enable
+this layout model.</p></li>
+<li><p>There are two axes: the main axis and the cross axis along which we
+can align our items.</p></li>
+<li><p>By default items are aligned along the main axis and by default items
+aligned in a row.</p></li>
+<li><p>We can change the alignment along main axis by using ‘flex-direction:
+column’.</p></li>
+</ul>
+<section id="alignment-of-items">
+<h3>alignment of items<a class="headerlink" href="#alignment-of-items" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>We can modify the distribution of space around and between the items
+with justify-content property along the main axis.</p></li>
+<li><p>We can change the vertical (or horizontal in case of flex-direction:
+column) alignment of items using align-items, the default is
+‘stretch’ which stretches the items to maximum height.</p></li>
+<li><p>We can modify the distribution of space along the cross axis with
+align-content property but is useful for multiline flexbox only.</p></li>
+<li><p>We can make items wrap onto next line with ‘flex-wrap: wrap’
+property; this prevents the resizing of items when view port is
+shrinked.</p></li>
+</ul>
+</section>
+<section id="items-properties">
+<h3>items properties<a class="headerlink" href="#items-properties" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>We can override the space distribution between and around the items
+with properties inside flexbox items themselves.</p></li>
+<li><p>We can prevent a flexbox item from shrinking when viewport shrinks
+with ‘flex-shrink: 0’.</p></li>
+<li><p>We can allow a flexbox item to take up remaining space using
+‘flex-grow: 1’.</p></li>
+<li><p>An item with ‘flex-grow: 2’ will take twice the remaining space than
+an item with ‘flex-grow: 1’.</p></li>
+<li><p>We can use align-self property to override the align-content property
+set in flexbox-container for the item.</p></li>
+<li><p>We can change the order of the items with order property without
+changing the html (not recommended).</p></li>
+<li><p>We can set the initial main size (width in case of row aligned and
+height in case of column aligned) of each flexbox item.</p></li>
+<li><p>In case both width/height and flex-basis are set, flex-basis takes
+priority.</p></li>
+<li><p>We can use the shorthand flex property to set flex-grow, flex-shrink
+and flex-basis (in that order) for a flexbox item e.g. flex: 2 2 10%</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Wiki</a></h1>
+
+
+
+
+
+
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="c_lang.html">C Programming</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cascading Style Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="english.html">English Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="german.html">German</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="languages.html">Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="life_advice.html">10 Rules to live life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network_programming.html">Network Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodejs.html">Node JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_based_c.html">Project Based Tutorials in C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prolog.html">Prolog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Programming Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactjs.html">ReactJs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_design.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_development.html">Software Development</a></li>
+</ul>
+
+
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Cascading Style Sheet</a><ul>
+<li><a class="reference internal" href="#online-resources-to-learn-css-beginner">Online resources to learn css (beginner)</a></li>
+<li><a class="reference internal" href="#basics">Basics</a></li>
+<li><a class="reference internal" href="#cascade-and-inheritance">Cascade and Inheritance</a><ul>
+<li><a class="reference internal" href="#cascade-in-case-of-conflicting-selection-the-css-rule-that-appears-later-will-be-applied-hence-order-of-the-css-rules-matter">Cascade : in case of conflicting selection, the css rule that appears later will be applied, hence order of the css rules matter</a><ul>
+<li><a class="reference internal" href="#when-more-rule-can-style-an-element-then-cascade-determines-which-rule-will-be-applied">When more rule can style an element, then cascade determines which rule will be applied</a></li>
+<li><a class="reference internal" href="#it-depends-on-following-three-factors-listed-here-in-incresing-order-of-priority-later-ones-overrule-earlier-ones-source-order-specificity-importance">It depends on following three factors listed here in incresing order of priority (later ones overrule earlier ones): source order, specificity, importance</a></li>
+<li><a class="reference internal" href="#source-order-means-the-order-of-the-conflicting-css-rules-in-the-css-file-s-the-later-ones-overrule-earlier-rules">source order : means the order of the conflicting css rules in the css file(s), the later ones overrule earlier rules.</a></li>
+<li><a class="reference internal" href="#specificity-some-selectors-are-considered-more-specific-than-others-e-g-id-selector-is-more-specific-than-class-selector-which-is-more-specific-than-element-selector">Specificity : Some selectors are considered more specific than others e.g. id selector is more specific than class selector which is more specific than element selector</a></li>
+<li><a class="reference internal" href="#styles-with-higher-specificity-overides-the-ones-with-lower-specificity">Styles with higher specificity overides the ones with lower specificity</a></li>
+<li><a class="reference internal" href="#only-the-conflicting-css-declarations-are-replaced-rather-than-entire-rulesets">Only the conflicting css declarations are replaced rather than entire rulesets.</a></li>
+<li><a class="reference internal" href="#the-browser-gives-certain-scores-to-different-selectors-by-adding-which-the-total-specificity-score-is-calculated">The browser gives certain scores to different selectors by adding which the total specificity score is calculated.</a></li>
+<li><a class="reference internal" href="#specificity-of-a-selector-is-measued-using-four-different-values-four-single-digit-columns-thousands-hundrends-tens-and-ones">Specificity of a selector is measued using four different values (four single digit columns): Thousands, Hundrends, Tens and Ones</a></li>
+<li><a class="reference internal" href="#the-inline-styles-give-1-to-the-thousands-id-selector-scores-1-in-hundereds-column-class-pseudo-class-and-attribute-score-in-tens-column-and-element-pseudo-elements-score-in-ones-column">The inline styles give 1 to the Thousands, id selector scores 1 in hundereds column, class, pseudo-class and attribute score in Tens column, and element,pseudo-elements score in ones column</a></li>
+<li><a class="reference internal" href="#e-g-the-selector-h1-p-first-letter-has-total-specificity-score-of-3">e.g. the selector ‘h1 + p::first-letter’ has total specificity score of 3</a></li>
+<li><a class="reference internal" href="#importance-we-can-use-a-special-keyword-important-to-overrule-all-calculations-about-cascade-and-specificity-never-use-this-actually">Importance: We can use a special keyword ‘!important’ to overrule all calculations about cascade and specificity (NEVER USE THIS ACTUALLY!!)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inheritance-some-css-properties-set-on-parent-elements-are-inherited-by-child-elements-for-e-g-color-font-family-and-some-aren-t-for-e-g-width">Inheritance: Some CSS properties set on parent elements are inherited by child elements for e.g. color, font-family and some aren’t for e.g. width.</a><ul>
+<li><a class="reference internal" href="#css-provides-five-special-universal-values-to-control-inheritance-inherit-initial-revert-revert-layer-and-unset">CSS provides five special universal values to control inheritance: inherit, initial, revert, revert-layer and unset</a></li>
+<li><a class="reference internal" href="#a-shorthand-property-all-can-be-used-to-set-these-inheritance-values-for-all-properties-of-an-element-at-once">A shorthand property ‘all’ can be used to set these inheritance values for all properties of an element at once</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#css-selection">CSS Selection</a><ul>
+<li><a class="reference internal" href="#basic-css-selectors">Basic CSS Selectors</a><ul>
+<li><a class="reference internal" href="#the-simplest-of-selectors-are-the-type-selectors-that-uses-html-element-names-themselves-html-body-p-div-a-etc">The simplest of selectors are the type selectors that uses html element names themselves: html,body,p,div,a etc.,</a></li>
+<li><a class="reference internal" href="#class-selectors-have-at-the-start-followed-by-the-class-name-id-selectors-have-at-the-start-followed-by-the-id-name">Class selectors have ‘.’ at the start followed by the class name, id selectors have ‘#’ at the start followed by the id name</a></li>
+<li><a class="reference internal" href="#we-can-target-multiple-selectors-by-using-a-comma-between-them">We can target multiple selectors by using a comma between them</a></li>
+<li><a class="reference internal" href="#element-tag-selector-immediately-followed-by-a-class-selector-selects-all-the-elements-with-the-specified-class-only">Element tag selector immediately followed by a class selector selects all the elements with the specified class only.</a></li>
+<li><a class="reference internal" href="#the-universal-selector-will-match-elements-of-any-type-in-the-document-or-inside-parent-element-when-chained-with-another-selector-with-a-descendant-combinator">The universal selector ‘*’ will match elements of any type in the document or inside parent element when chained with another selector with a descendant combinator.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#css-combinators">CSS Combinators</a><ul>
+<li><a class="reference internal" href="#to-select-nested-element-inside-another-element-i-e-descendant-element-we-use-a-selector-called-descendant-combinator-that-uses-space-to-separate-the-enclosing-selector-and-the-enclosed-selector">To select nested element inside another element (i.e. descendant element), we use a selector called descendant combinator that uses space to separate the enclosing selector and the enclosed selector</a></li>
+<li><a class="reference internal" href="#we-use-adjacent-sibling-combinator-to-select-element-that-is-immediately-after-the-specified-element-on-the-same-hierarchy-level">We use adjacent sibling combinator ‘+’ to select element that is immediately after the specified element on the same hierarchy level</a></li>
+<li><a class="reference internal" href="#the-general-sibling-selector-selects-all-the-siblings-of-the-specified-element">The general sibling selector (~) selects all the siblings of the specified element</a></li>
+<li><a class="reference internal" href="#the-child-selector-selects-all-the-children-immediate-descendants-of-the-specified-element">The child selector (&gt;) selects all the children (immediate descendants) of the specified element</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#attribute-selectors">Attribute Selectors</a><ul>
+<li><a class="reference internal" href="#attribute-selectors-enable-us-to-select-elements-based-on-the-presence-of-an-attribute-alone-or-along-with-its-value">Attribute selectors enable us to select elements based on the presence of an attribute alone or along with its value.</a></li>
+<li><a class="reference internal" href="#syntax-attr-e-g-a-title-selects-all-a-elements-with-an-attribute-named-title">syntax: [attr], e.g. a[title] selects all &lt;a&gt; elements with an attribute named ‘title’</a></li>
+<li><a class="reference internal" href="#syntax-attr-value-e-g-a-href-http-example-com-selects-all-a-elements-with-href-attribute-having-value-the-string-http-example-com">syntax: [attr=value], e.g. a[href=”http://example.com”] selects all &lt;a&gt; elements with href attribute having value the string “http://example.com”</a></li>
+<li><a class="reference internal" href="#syntax-attr-value-e-g-p-class-special-matches-p-elements-with-class-attribute-exactly-the-string-special-or-if-the-classlist-contains-special">syntax: [attr~=value], e.g. p[class~=”special”] matches &lt;p&gt; elements with class attribute exactly the string “special” or if the classlist contains ‘special’</a></li>
+<li><a class="reference internal" href="#syntax-attr-value-e-g-div-lang-zh-matches-div-elements-with-lang-attribute-exactly-the-string-zh-or-starts-with-zh-and-a-hyphen">syntax: [attr|=value], e.g. div[lang=”zh”] matches &lt;div&gt; elements with lang attribute exactly the string “zh” or starts with “zh” and a hyphen (-)</a></li>
+<li><a class="reference internal" href="#syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-beginning-with-box">syntax: [attr^=value], e.g. li[class^=”box-”] matches &lt;li&gt; elements with classlist beginning with “box-”</a></li>
+<li><a class="reference internal" href="#syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-ending-in-box">syntax: [attr$=value], e.g. li[class$=”-box”] matches &lt;li&gt; elements with classlist ending in “-box”</a></li>
+<li><a class="reference internal" href="#syntax-attr-value-e-g-li-class-box-matches-li-elements-with-classlist-containing-the-sting-box">syntax: [attr*=value], e.g. li[class*=”box”] matches &lt;li&gt; elements with classlist containing the sting “box”</a></li>
+<li><a class="reference internal" href="#to-ignore-the-case-sensitivity-of-the-attributes-matches-we-can-put-the-value-i-before-the-closing-bracket-e-g-li-class-button-i">to ignore the case sensitivity of the attributes matches we can put the value i before the closing bracket e.g. li[class^=”button-” i]</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pseudo-classes-and-pseudo-elements">Pseudo Classes and Pseudo Elements</a><ul>
+<li><a class="reference internal" href="#pseudo-classes-are-used-to-style-certain-states-of-an-element-for-example-hover-pseudo-class-is-used-to-select-an-element-only-when-it-is-hovered-over-by-the-mouse-pointer">Pseudo classes are used to style certain states of an element, for example, :hover pseudo class is used to select an element only when it is hovered over by the mouse pointer</a></li>
+<li><a class="reference internal" href="#a-hover-select-the-anchor-element-over-which-the-mouse-pointer-is-being-hovered">a:hover { } -&gt; select the anchor element over which the mouse pointer is being hovered</a></li>
+<li><a class="reference internal" href="#the-not-pseudo-class-is-used-to-select-all-that-don-t-match-the-given-selector-e-g-not-p-matches-everything-except-paragraphs">The :not() pseudo-class is used to select all that don’t match the given selector e.g. :not(p) matches everything except paragraphs.</a></li>
+<li><a class="reference internal" href="#pseudo-elements-are-used-to-style-a-part-of-an-element-rather-than-the-whole-element-e-g-p-first-line-selects-only-the-first-lines-of-all-paragraph-elements">Pseudo elements are used to style a part of an element rather than the whole element. e.g. p::first-line selects only the first lines of all paragraph elements</a></li>
+<li><a class="reference internal" href="#from-lower-to-higher-specificity-type-selectors-and-pseudo-elements-class-selctors-and-pseudo-classes-id-selectors">From lower to higher specificity: Type selectors and pseudo-elements, Class selctors and pseudo-classes, id selectors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-box-model">The box model</a><ul>
+<li><a class="reference internal" href="#there-are-two-types-of-boxes-inline-boxes-and-block-boxes">There are two types of boxes: inline boxes and block boxes</a></li>
+<li><a class="reference internal" href="#the-type-of-box-applied-to-an-element-is-defined-by-display-property">The type of box applied to an element is defined by ‘display’ property</a></li>
+<li><a class="reference internal" href="#css-boxes-has-two-display-types-outer-and-inner-display-types">CSS boxes has two display types: outer and inner display types</a><ul>
+<li><a class="reference internal" href="#outer-display-type-details-whether-the-box-is-block-or-inline">Outer display type details whether the box is block or inline</a></li>
+<li><a class="reference internal" href="#inner-display-type-which-dictates-how-elements-inside-the-box-are-laid-out">Inner display type which dictates how elements inside the box are laid out</a></li>
+<li><a class="reference internal" href="#by-default-the-elements-inside-a-box-are-laid-out-in-normal-flow-i-e-like-any-other-block-or-inline-elements">By default, the elements inside a box are laid out in normal flow i.e. like any other block or inline elements</a></li>
+<li><a class="reference internal" href="#we-can-change-the-inner-display-type-by-using-display-flex-which-makes-the-outer-display-type-block-but-inner-display-type-is-changed-to-flex">We can change the inner display type by using display: flex, which makes the outer display type block but inner display type is changed to flex.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-display-property-values-such-as-block-and-inline-relates-to-the-outer-value-of-display">The display property values such as ‘block’ and ‘inline’ relates to the outer value of display.</a></li>
+<li><a class="reference internal" href="#block-boxes">Block boxes</a><ul>
+<li><a class="reference internal" href="#it-has-outer-display-type-of-block">It has outer display type of ‘block’</a></li>
+<li><a class="reference internal" href="#the-box-will-break-onto-a-new-line-and-will-extend-in-inline-direction-to-fill-the-space-available-in-its-container-becomes-as-wided-as-its-container">The box will break onto a new line and will extend in inline direction to fill the space available in its container (becomes as wided as its container)</a></li>
+<li><a class="reference internal" href="#the-width-and-height-properties-are-respected">The ‘width’ and ‘height’ properties are respected.</a></li>
+<li><a class="reference internal" href="#padding-margin-and-border-will-cause-other-elements-to-be-pushed-away-from-the-box">Padding, margin and border will cause other elements to be pushed away from the box.</a></li>
+<li><a class="reference internal" href="#some-html-elements-like-h1-and-p-use-block-as-their-default-outer-display-type">Some html elements like &lt;h1&gt; and &lt;p&gt; use ‘block’ as their default outer display type.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inline-boxes">Inline boxes</a><ul>
+<li><a class="reference internal" href="#the-box-has-outer-display-type-of-inline">The box has outer display type of ‘inline’.</a></li>
+<li><a class="reference internal" href="#the-box-will-not-break-onto-a-new-line">The box will not break onto a new line.</a></li>
+<li><a class="reference internal" href="#the-width-and-height-properties-will-not-apply">The ‘width’ and ‘height’ properties will not apply.</a></li>
+<li><a class="reference internal" href="#vertical-padding-margins-and-borders-will-apply-but-will-not-affect-other-inline-boxes-to-move-away-i-e-may-overlap-other-elements">Vertical padding, margins and borders will apply but will not affect other inline boxes to move away i.e. may overlap other elements.</a></li>
+<li><a class="reference internal" href="#horizontal-padding-margins-and-borders-will-apply-and-will-cause-other-inline-boxes-to-move-away">Horizontal padding, margins and borders will apply and will cause other inline boxes to move away.</a></li>
+<li><a class="reference internal" href="#some-html-elements-like-a-span-em-and-strong-use-inline-as-their-outer-display-type-by-default">Some html elements like &lt;a&gt;, &lt;span&gt;, &lt;em&gt; and &lt;strong&gt; use ‘inline’ as their outer display type by default.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#special-display-value-inline-block">Special display value: inline-block</a><ul>
+<li><a class="reference internal" href="#it-provides-a-middle-ground-between-inline-and-block">It provides a middle ground between inline and block.</a></li>
+<li><a class="reference internal" href="#useful-in-situations-where-you-do-not-want-an-item-to-break-onto-a-new-line-but-do-want-it-to-respect-width-and-height-and-avoid-overlapping">Useful in situations where you do not want an item to break onto a new line but do want it to respect width and height and avoid overlapping.</a></li>
+<li><a class="reference internal" href="#padding-margin-and-border-will-cause-other-elements-to-be-pushed-away">Padding, margin and border will cause other elements to be pushed away.</a></li>
+<li><a class="reference internal" href="#it-will-only-become-larger-than-its-content-if-you-explicitly-add-width-and-height-properties">It will only become larger than its content if you explicitly add width and height properties.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-css-box-model-as-a-whole-applies-to-block-boxes-and-inline-boxes-use-just-some-of-the-behavior-defined-in-the-box-model">The CSS box model as a whole applies to block boxes and inline boxes use just some of the behavior defined in the box model.</a></li>
+<li><a class="reference internal" href="#the-parts-of-a-css-block-box-content-box-padding-box-border-box-and-margin-box">The parts of a css block box: content box, padding box, border box and margin box</a></li>
+<li><a class="reference internal" href="#margin-and-padding">Margin and padding</a><ul>
+<li><a class="reference internal" href="#margin-is-the-space-outside-the-border-of-an-element-set-with-the-shorthand-margin-property-or-individual-margin-top-margin-right-margin-bottom-and-margin-left">Margin is the space outside the border of an element set with the shorthand margin property or individual margin-top, margin-right, margin-bottom and margin-left.</a></li>
+<li><a class="reference internal" href="#we-can-set-all-four-margins-to-a-single-value-with-margin-property-by-giving-it-a-single-value-e-g-margin-45px">We can set all four margins to a single value with margin property by giving it a single value e.g. margin: 45px</a></li>
+<li><a class="reference internal" href="#we-can-also-set-all-four-margins-to-different-values-with-clockwise-notation">We can also set all four margins to different values with clockwise notation</a></li>
+<li><a class="reference internal" href="#e-g-margin-20-22-30-24-sets-margin-top-to-20-margin-right-to-22-margin-bottom-to-30-and-margin-left-to-24">e.g. margin: 20 22 30 24 sets margin-top to 20, margin-right to 22, margin-bottom to 30 and margin-left to 24</a></li>
+<li><a class="reference internal" href="#the-margin-property-can-be-set-to-negative-values-as-well">The margin property can be set to negative values as well.</a></li>
+<li><a class="reference internal" href="#padding-is-the-space-between-the-border-and-the-element-itself">Padding is the space between the border and the element itself.</a></li>
+<li><a class="reference internal" href="#similar-to-margin-property-the-padding-property-can-have-single-or-multiple-values-to-set-the-padding">Similar to margin property, the padding property can have single or multiple values to set the padding.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#borders">Borders</a><ul>
+<li><a class="reference internal" href="#some-properties-related-to-the-border-of-an-element-are-border-width-border-style-border-color">Some properties related to the border of an element are: border-width, border-style, border-color.</a></li>
+<li><a class="reference internal" href="#we-can-make-rounded-borders-with-border-radius-property-higher-value-means-more-rounded-border">We can make rounded borders with border-radius property; Higher value means more rounded border.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-units-used-in-css">General units used in CSS</a></li>
+<li><a class="reference internal" href="#colors">Colors</a></li>
+<li><a class="reference internal" href="#fonts">Fonts</a></li>
+<li><a class="reference internal" href="#background-styling">Background styling</a></li>
+<li><a class="reference internal" href="#css-variables">CSS variables</a></li>
+<li><a class="reference internal" href="#css-media-queries">CSS media queries</a></li>
+<li><a class="reference internal" href="#css-position">CSS position</a></li>
+<li><a class="reference internal" href="#css-grid">CSS grid</a></li>
+<li><a class="reference internal" href="#css-flexbox">CSS flexbox</a><ul>
+<li><a class="reference internal" href="#alignment-of-items">alignment of items</a></li>
+<li><a class="reference internal" href="#items-properties">items properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Diwakar Wagle.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

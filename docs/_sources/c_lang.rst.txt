@@ -1,0 +1,48 @@
+======================
+C Programming
+======================
+.. raw:: org
+
+   #+FILETAGS: c-lang:programming:wiki
+
+                     
+Resources to learn (or revise) the language
+===========================================
+
+-  The C programming language 2nd edition by Brian Kernighan,Dennis
+   Ritchie (Book)
+
+-  C Programming: A modern approach by K. N. King (Book)
+
+-  21st Century C by Ben Klemmens (Book)
+
+-  The Practice of Programming by Brian Kernighan, Rob Pike (Book)
+
+-  C Interfaces and Implementations by David R. Hanson (Book)
+
+-  Programming in the UNIX environment by Richard W. Stevens, Stephen A.
+   Rago (Book)
+
+-  The Linux Programming Interface by Michael Kerrisk (Book)
+
+-  Programming Pearls by Jon Bentley (Book)
+
+-  Computer Systems: A Programmer's Perspective by David O'Hallaron et.
+   al.
+
+-  Expert C Programming: Deep C Secrets by Peter Van Der Linden (Book)
+
+-  Beej's Guide to Network Programming by Brian "beej Jorgensen" Hall
+   (Book)
+
+-  C: A Reference Manual by Harbison, Steele (Book)
+
+-  C Traps and Pitfalls by Koenig (Book)
+
+-  CS50 online Harvard course (Mooc)
+
+-  SEI CERT C Coding Standard ->
+   https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard
+
+`Project Based Learning in C Language <project_based_c.org>`__
+--------------------------------------------------------------

@@ -1,0 +1,8 @@
+#+SETUPFILE: ~/.emacs.d/org-templates/level-0.org
+#+INCLUDE: ~/mywiki/src/searchbar.org
+#+TITLE: Programming
+#+FILETAGS: programming:wiki
+
+* [[file:c_lang.org][C]] 
+* [[file:python.org][Python]]
+* [[file:css.org][CSS]]

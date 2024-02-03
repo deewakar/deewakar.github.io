@@ -1,0 +1,6 @@
+#+TITLE: Prolog
+#+FILETAGS: prolog:programming:wiki
+#+STARTUP: inlineimages 
+
+* Miscellaneous interesting prolog resources
+** [[https://github.com/SuperDisk/tar.pl]] - a tar file creater/extractor in ~130 lines of SWI-Prolog

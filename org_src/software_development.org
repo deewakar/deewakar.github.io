@@ -1,0 +1,8 @@
+#+SETUPFILE: ~/.emacs.d/org-templates/level-0.org
+#+INCLUDE: ~/mywiki/src/searchbar.org
+#+TITLE: Software Development
+#+FILETAGS: software_development:wiki
+
+* [[file:software_design.org][Software Design]]
+* Software Architectures
+* Software Testing
